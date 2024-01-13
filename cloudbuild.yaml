@@ -1,10 +1,10 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args:
-  - 'build'
-  - '-t'
-  - 'gcr.io/peri/peri-image:latest'
-  - '.'
+    - 'build'
+    - '-t'
+    - 'gcr.io/peri/peri-image:latest'
+    - '.'
 
 images:
 - 'gcr.io/peri/peri-image:latest'
@@ -13,4 +13,8 @@ serviceAccount:
   email: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
 logging:
-  logging: LEGACY
+  loggingOptions:
+    logging: 'REGIONAL_USER_OWNED_BUCKET'
+    loggingFilter: 'level=ERROR'
+    loggingTimestampFormat: 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+    loggingBinarySizeLimit: 10MB
