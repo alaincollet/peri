@@ -5,5 +5,4 @@ steps:
 images:
 - 'gcr.io/peri/peri-image:latest'
 
-serviceAccount:
-  email: 'gcloudac@cfv2024.iam.gserviceaccount.com'
+serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'
