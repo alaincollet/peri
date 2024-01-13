@@ -9,10 +9,10 @@ steps:
 
 serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
-# Docker Push
+  # Docker Push
 - name: 'gcr.io/cloud-builders/docker'
-    args: ['push',
-           'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
+  args: ['push',
+           'europe-west9-docker.pkg.dev/${europe-west9}/my-docker-repo/myimage']
 
 # Entrypoint, timeout and environment variables
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
