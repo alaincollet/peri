@@ -12,3 +12,9 @@ images:
 serviceAccount:
   email: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
+logging:
+  loggingOptions:
+    logging: 'REGIONAL_USER_OWNED_BUCKET'
+    loggingFilter: 'level=ERROR'
+    loggingTimestampFormat: 'YYYY-MM-DDTHH:mm:ss.SSSZ'
+    loggingBinarySizeLimit: 10MB
