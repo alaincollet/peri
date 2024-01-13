@@ -9,13 +9,13 @@ steps:
 
 serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
-  # Docker Push
-  - name: 'gcr.io/cloud-builders/docker'
+# Docker Push
+- name: 'gcr.io/cloud-builders/docker'
     args: ['push',
            'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
 
-  # Entrypoint, timeout and environment variables
-  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+# Entrypoint, timeout and environment variables
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'gcloud'
     timeout: 240s
     args: ['compute', 'instances',
