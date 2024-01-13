@@ -1,4 +1,5 @@
 steps:
+  # Docker Build
 - name: 'gcr.io/cloud-builders/docker'
   args:
   - 'build'
@@ -6,10 +7,19 @@ steps:
   - 'gcr.io/peri/peri-image:latest'
   - '.'
 
-images:
-- 'gcr.io/peri/peri-image:latest'
+  # Docker Push
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push',
+           'us-central1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage']
 
-serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'
-
-loggingOptions:
-  logging: REGIONAL_USER_OWNED_BUCKET
+  # Entrypoint, timeout and environment variables
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: 'gcloud'
+    timeout: 240s
+    args: ['compute', 'instances',
+           'create-with-container', 'my-vm-name',
+           '--container-image',
+           'europe-west9-docker.pkg.dev/${cfv2024}/my-docker-repo/myimage']
+    env:
+      - 'CLOUDSDK_COMPUTE_REGION=europe-west9'
+      - 'CLOUDSDK_COMPUTE_ZONE=europe-west9-a'
