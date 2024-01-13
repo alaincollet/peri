@@ -1,3 +1,6 @@
+
+gcloud builds submit --region=us-west2 --config=/my-build-configs/peri.yaml  pour le build
+
 # https://hello-k6xnpfueaq-od.a.run.app/   ooo
 
 https://github.com/GoogleCloudPlatform/python-docs-samples/blob/HEAD/run/helloworld/main.py
