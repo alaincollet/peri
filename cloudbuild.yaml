@@ -28,3 +28,5 @@ serviceAccount: projects/cfv2024/serviceAccounts/gcloudac@cfv2024.iam.gserviceac
       
 options:
   logging: CLOUD_LOGGING_ONLY
+
+# Échec du déclenchement de la compilation: failed precondition: due to quota restrictions, cannot run builds in this region. Please contact support
