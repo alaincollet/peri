@@ -12,6 +12,3 @@ images:
 serviceAccount:
   email: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
-logging:
-  loggingOptions:
-    logging: 'CLOUD_LOGGING_ONLY / NONE'
