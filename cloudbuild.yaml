@@ -1,11 +1,3 @@
-steps:
-- name: 'gcr.io/cloud-builders/docker'
-  args:
-  - 'build'
-  - '-t'
-  - 'gcr.io/peri/peri-image:latest'
-  - '.'
-
 images:
 - 'gcr.io/peri/peri-image:latest'
 
