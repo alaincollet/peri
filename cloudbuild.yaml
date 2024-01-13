@@ -13,4 +13,4 @@ serviceAccount:
   email: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
 logging:
-  logging: 'LEGACY'
+  logging: LEGACY
