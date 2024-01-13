@@ -11,6 +11,5 @@ images:
 
 serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'
 
-logging:
-  loggingOptions:
-    logging: REGIONAL_USER_OWNED_BUCKET
+loggingOptions:
+  logging: REGIONAL_USER_OWNED_BUCKET
