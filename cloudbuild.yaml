@@ -2,13 +2,13 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t',
-           'europe-west9-docker.pkg.dev/${cfv2024}/my-docker-repo/myimage',
+           'europe-west1-docker.pkg.dev/cfv2024/peri-docker-repo/myimage',
            '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push',
-           'europe-west9-docker.pkg.dev/${cfv2024}/my-docker-repo/myimage']
+           'europe-west1-docker.pkg.dev/cfv2024/peri-repo/myimage']
 
   # Entrypoint, timeout and environment variables
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
@@ -17,10 +17,10 @@ steps:
     args: ['compute', 'instances',
            'create-with-container', 'my-vm-name',
            '--container-image',
-           'europe-west9-docker.pkg.dev/${cfv2024}/my-docker-repo/myimage']
+           'europe-west1-docker.pkg.dev/cfv2024/peri-docker-repo/myimage']
     env:
-      - 'CLOUDSDK_COMPUTE_REGION=europe-west9'
-      - 'CLOUDSDK_COMPUTE_ZONE=europe-west9-a'
+      - 'CLOUDSDK_COMPUTE_REGION=europe-west1'
+      - 'CLOUDSDK_COMPUTE_ZONE=europe-west1-a'
       
     
 # serviceAccount: 'gcloudac@cfv2024.iam.gserviceaccount.com'   
@@ -28,5 +28,3 @@ serviceAccount: projects/cfv2024/serviceAccounts/gcloudac@cfv2024.iam.gserviceac
       
 options:
   logging: CLOUD_LOGGING_ONLY
-
-# Échec du déclenchement de la compilation: failed precondition: due to quota restrictions, cannot run builds in this region. Please contact support
